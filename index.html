@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Plantillas de Excel y Google Sheets en Gumroad y libros de pasatiempos y organización en Amazon.">
+<meta property="og:title" content="Plantillas y libros">
+<meta property="og:description" content="Plantillas de Excel y Google Sheets en Gumroad y libros de pasatiempos y organización en Amazon.">
+<meta property="og:type" content="website">
+<title>Plantillas y Libros</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: una sola columna estrecha pensada para móvil; los enlaces son filas de una cuadrícula como las celdas de una hoja de cálculo. */
+  :root {
+    --bg: #f2f6f3;
+    --surface: #ffffff;
+    --fg: #13241b;
+    --muted: #51655a;
+    --line: #cfdcd3;
+    --accent: #1b6b46;
+    --accent-ink: #ffffff;
+    --book: #9a5b0c;
+    --focus: #0b57d0;
+    --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+    --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1913;
+      --surface: #15241c;
+      --fg: #e6efe9;
+      --muted: #9db3a6;
+      --line: #28392f;
+      --accent: #5cc28c;
+      --accent-ink: #0e1913;
+      --book: #e0a458;
+      --focus: #8ab4f8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1913;
+    --surface: #15241c;
+    --fg: #e6efe9;
+    --muted: #9db3a6;
+    --line: #28392f;
+    --accent: #5cc28c;
+    --accent-ink: #0e1913;
+    --book: #e0a458;
+    --focus: #8ab4f8;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.45;
+    padding-block: 40px 56px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .wrap { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+  header { background: var(--bg); padding: 20px; border: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+  h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 8vw, 40px); line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); max-width: 46ch; }
+
+  section { display: flex; flex-direction: column; gap: 12px; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0; background: var(--bg); align-self: flex-start; padding: 2px 8px 2px 0; }
+  h3 { font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 8px 0 0; font-weight: 600; background: var(--bg); align-self: flex-start; padding-right: 8px; }
+
+  ul { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); }
+  li + li { border-top: 1px solid var(--line); }
+  a.row {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 56px; padding: 10px 14px; color: var(--fg); text-decoration: none;
+  }
+  a.row:hover { background: color-mix(in srgb, var(--accent) 9%, var(--surface)); }
+  a.row:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+  .name { min-width: 0; font-weight: 500; text-wrap: pretty; }
+  .go { flex: none; font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .books .go { color: var(--book); }
+
+  a.store {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 10px 14px;
+    background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600;
+  }
+  a.store:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  a.store:hover { filter: brightness(1.08); }
+
+  footer { color: var(--muted); font-size: 13px; background: var(--bg); padding: 8px 12px; border: 1px solid var(--line); }
+  @media (prefers-reduced-motion: no-preference) { a.row, a.store { transition: background-color .15s, filter .15s; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Plantillas y libros</h1>
+    <p>Plantillas de Excel y Google Sheets en Gumroad, y libros de pasatiempos y organización en Amazon.</p>
+  </header>
+
+  <section aria-labelledby="t-plantillas">
+    <h2 id="t-plantillas">Plantillas · Gumroad</h2>
+    <a class="store" href="https://9976251748392.gumroad.com/?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span>Ver todas las plantillas</span><span aria-hidden="true">→</span></a>
+
+    <h3>En castellano</h3>
+    <ul>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/aoafa?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Control de ingresos y gastos para freelance y pequeños negocios</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/lxevux?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Diario de trading en Excel y Google Sheets</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/lhvuka?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Plan para salir de deudas</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/vhpotd?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Presupuesto familiar y fondo de emergencia</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/ujhdhx?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Registro de hábitos con rachas</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/sskmo?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Registro de lecturas y reto anual</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/aysbpn?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Gestor de pisos de alquiler</span><span class="go">Ver →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/rxvahy?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Planificador de oposiciones</span><span class="go">Ver →</span></a></li>
+    </ul>
+
+    <h3>In English</h3>
+    <ul>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/ywjxei?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Small business income and expense tracker</span><span class="go">View →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/mjovxh?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Trading journal spreadsheet</span><span class="go">View →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/acqlzx?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Debt payoff planner</span><span class="go">View →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/ugtym?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Family budget planner</span><span class="go">View →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/trvedn?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Habit tracker with fair streaks</span><span class="go">View →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/gitire?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Reading tracker and yearly goal</span><span class="go">View →</span></a></li>
+      <li><a class="row" href="https://9976251748392.gumroad.com/l/jfanwy?utm_source=bio&amp;utm_medium=linkhub" rel="noopener"><span class="name">Rental property manager</span><span class="go">View →</span></a></li>
+    </ul>
+  </section>
+
+  <section class="books" aria-labelledby="t-libros">
+    <h2 id="t-libros">Libros · Amazon</h2>
+    <ul>
+      <li><a class="row" href="https://www.amazon.es/dp/B0HN5CH3PS" rel="noopener"><span class="name">Sopa de letras para mayores: letra muy grande, 100 sopas temáticas</span><span class="go">Amazon →</span></a></li>
+      <li><a class="row" href="https://www.amazon.es/dp/B0HN7LKZH5" rel="noopener"><span class="name">Sopa de letras para mayores: Biblia, letra muy grande</span><span class="go">Amazon →</span></a></li>
+      <li><a class="row" href="https://www.amazon.es/dp/B0HLXSS2YV" rel="noopener"><span class="name">Agenda del opositor 2027</span><span class="go">Amazon →</span></a></li>
+      <li><a class="row" href="https://www.amazon.es/dp/B0HLWZ9YZ3" rel="noopener"><span class="name">Kawaii Mandala Zoo: libro de colorear antiestrés</span><span class="go">Amazon →</span></a></li>
+      <li><a class="row" href="https://www.amazon.com/dp/B0HN5CMNV4" rel="noopener"><span class="name">Large print word search for adults (English)</span><span class="go">Amazon →</span></a></li>
+    </ul>
+  </section>
+
+  <footer>Las plantillas se descargan al instante tras la compra y son de uso personal. Los libros se compran y se envían desde Amazon.</footer>
+</div>
+</body>
+</html>
